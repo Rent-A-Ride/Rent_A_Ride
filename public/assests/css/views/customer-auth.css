@@ -1,0 +1,41 @@
+.customer-auth-form {
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.customer-auth-form h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+
+}
+
+
+@media screen  and (min-width: 576px) {
+    .customer-auth-form {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .customer-auth-form {
+        width: 80%;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .customer-auth-form {
+        width: 50%;
+    }
+}
+
+@media screen and  (min-width: 1200px) {
+    .customer-auth-form {
+        width: 40%;
+    }
+}

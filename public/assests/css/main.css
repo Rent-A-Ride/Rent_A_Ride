@@ -1,0 +1,30 @@
+/* importing reset */
+@import "reset.css";
+
+/* importing variables */
+@import "variables/colors.css";
+
+/* importing animations */
+@import "animations.css";
+/*@import "admin-dashboard.css";*/
+@import "register.css";
+/*importing utilities */
+@import "utilities.css";
+@import "admin_dashboard_dashboard.css";
+/* importing component styles */
+@import "components/buttons.css";
+@import "components/form-components.css";
+@import "components/cards.css";
+@import "ownerViewVehicleProfile.css";
+/*.login_errormessage{*/
+/*  color:red;*/
+/*}*/
+
+
+/* importing css files for views */
+@import "views/customer-auth.css";
+
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
