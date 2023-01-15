@@ -52,14 +52,14 @@
 
         </li>
         <li>
-            <a href="#">
+            <a href="viewVehicleowner">
                 <img src="/assests/img/e.jpg" class="pic">
                 <span>Vehicle Owner</span>
             </a>
 
         </li>
         <li>
-            <a href="#">
+            <a href="viewownerDriver">
                 <img src="/assests/img/driver.png" class="pic">
                 <span>Driver</span>
             </a>
