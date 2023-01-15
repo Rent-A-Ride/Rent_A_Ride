@@ -21,6 +21,22 @@ class OwnerController
          return $res->render("/admin/admin-vehicle","owner-dashboard",['result'=>$vehicle]);
     }
 
+    public function ownerVehicleOwner(Request $req, Response $res){
+        //         $vehicles = new VehicleController();
+        //         $vehicle=[];
+        //         $vehicle = $vehicles->ownerGetVehicle($req,$res);
+        // //        print_r($vehicle);
+        return $res->render("/admin/admin_VehicleOwner","owner-dashboard");
+    }
+        
+    public function ownerDriver(Request $req, Response $res){
+                //         $vehicles = new VehicleController();
+                //         $vehicle=[];
+                //         $vehicle = $vehicles->ownerGetVehicle($req,$res);
+                // //        print_r($vehicle);
+        return $res->render("/admin/admin_Driver","owner-dashboard");
+    }
+
 
 //    public function ownerLogout(){
 //

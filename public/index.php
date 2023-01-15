@@ -35,6 +35,10 @@ $app->router->post("/add-vehicle", [VehicleController::class, "owneraddVehicle"]
 $app->router->get("/viewVehicleProfile", [VehicleController::class, "viewVehicleProfile"]);
 $app->router->post("/viewVehicleProfile", [VehicleController::class, "viewVehicleProfile"]);
 
+$app->router->get("/viewVehicleowner", [OwnerController::class, "ownerVehicleOwner"]);
+
+$app->router->get("/viewownerDriver", [OwnerController::class, "ownerDriver"]);
+
 // run the application
 $app->run();
 
