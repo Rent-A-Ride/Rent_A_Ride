@@ -22,43 +22,43 @@
 
     <ul class="side-bar-menu top">
         <li class="active">
-            <a href="/owner">
-                <img src="/assests/img/dashboard.png" class="pic4">
-                <span>Dashboard</span>
-            </a>
-
-        </li>
-        <li >
-            <a href="#">
-                <img src="/assests/img/profile.png" class="pic">
+            <a href="">
+            <img src="/assests/img/profile.png" class="pic">
                 <span>Profile</span>
             </a>
 
         </li>
         <li >
+            <a href="#">
+            <img src="/assests/img/d.jpg" class="pic">
+                <span>Vehicles</span>
+            </a>
+
+        </li>
+        <li >
             <a href="admin-vehicle">
-                <img src="/assests/img/d.jpg" class="pic">
-                <span>Vehicle</span>
+            <img src="/assests/img/driver.png" class="pic">
+                <span>Drivers</span>
             </a>
 
         </li>
         <li>
             <a href="#">
 
-                <img src="/assests/img/customer.png" class="pic">
-                <span>Customer</span>
+                <img src="/assests/img/g.jpg" class="pic">
+                <span>Payments</span>
 
             </a>
 
         </li>
-        <li>
+        <!-- <li>
             <a href="viewVehicleowner">
                 <img src="/assests/img/e.jpg" class="pic">
-                <span>Vehicle Owner</span>
+                <span>Settings</span>
             </a>
 
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
             <a href="viewownerDriver">
                 <img src="/assests/img/driver.png" class="pic">
                 <span>Driver</span>
@@ -71,13 +71,13 @@
                 <span>Payment</span>
             </a>
 
-        </li>
+        </li> -->
 
     </ul>
-    <ul class="side-bar-menu bottum">
+    <ul class="side-bar-menu bottum1">
 
 
-        <li id="bottumadmin">
+        <li id="bottum1">
             <a href="#">
                 <img src="/assests/img/settings.jpg" class="pic">
                 <span>Settings</span>
