@@ -169,6 +169,10 @@ li{
 
 }
 
+#bottum1{
+    margin-top: 300px;
+}
+
 #side-bar .side-bar-menu li a{
     width: 100%;
     height: 100%;
@@ -260,6 +264,7 @@ li{
 
 
 
+
 #content nav form .form-input input{
     flex-grow: 1;
     padding: 0 16px;
@@ -310,6 +315,12 @@ li{
 .admin-nav{
     height: 56px;
 }
+
+#bottumadmin{
+    margin-top: 150px;
+}
+
+
 
 
 /* @media screen and (max-width: 1000px) {
