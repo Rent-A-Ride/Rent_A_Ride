@@ -7,7 +7,8 @@ use app\core\Response;
 use app\core\Session;
 use app\models\Customer;
 use app\models\owner;
-
+use app\models\user;
+use app\models\vehicle_Owner;
 
 class AuthenticationController
 {
@@ -20,58 +21,109 @@ class AuthenticationController
         return $res->render("register","main");
     }
 
-    public function registerCustomer(Request $req, Response $res): string
-    {
-        $body= $req->body();
+    // public function registerCustomer(Request $req, Response $res): string
+    // {
+    //     $body= $req->body();
 
-        $customer = new Customer($body);
-        $errors = $customer-> validateRegisterBody();
+    //     $customer = new Customer($body);
+    //     $errors = $customer-> validateRegisterBody();
 
-        if(empty($errors)){
-            echo "Congrats, you fill the form correctly!";
-            $result = customer->register();
-            if($result){
-                $res->render("/home","main");
-            } else {
-                $res->render("customer-signup", "main" );
-            }
+    //     if(empty($errors)){
+    //         echo "Congrats, you fill the form correctly!";
+    //         $result = customer->register();
+    //         if($result){
+    //             $res->render("/home","main");
+    //         } else {
+    //             $res->render("customer-signup", "main" );
+    //         }
 
-        } else {
-            return $res->render(view: "customer-signup", pageParams: [
-                'errors' => $errors
-            ]);
-        }
+    //     } else {
+    //         return $res->render(view: "customer-signup", pageParams: [
+    //             'errors' => $errors
+    //         ]);
+    //     }
 
 
 
-        return "Registering customer";
+    //     return "Registering customer";
 
-    }
+    // }
     public function login_form(Request $req, Response $res): string
     {
         return $res->render("login","main");
     }
 
-    public function admin_login(Request $req, Response $res)
+    public function login(Request $req, Response $res)
     {
         $body = $req->body();
-        $owner = new owner($body);
-        $result = $owner->login();
+        $user = new user($body);
+        $result = $user->login();
+        // var_dump($result);
+        // die();
+
         if (is_array($result)){
-            return $res->render("login","main");
+            return $res->render("login","main",pageParams:['errors' => $result]);
 
         }
-        if ($result){
-            $req->session->set("authenticated",true);
-            $req->session->set("user_email",$result->email);
-            $req->session->set("user_role","owner");
-            return $res->render("/admin/owner","owner-dashboard");
+        else {
+            $user_id=$result->user_ID;
+            // var_dump($user_id);
+            // die();
+            $owner = new owner($body);
+            $result1=$owner->owner_login($user_id);
+            if (is_array($result1)) {
+
+                $vehicle_owner=new vehicle_Owner($body);
+                $result2=$vehicle_owner->vehicle_Owner_login($user_id);
+                if (is_array($result2)) {
+                
+                }
+                else {
+                    $req->session->set("authenticated",true);
+                    $req->session->set("user_email",$result->email);
+                    $req->session->set("user_role","vehicle_Owner");
+                    return $res->render("/VehicleOwner/vehicleowner","vehicleOwner-dashboard");
+                    
+                }
 
 
+                
+            }
+            else {
+                $req->session->set("authenticated",true);
+                $req->session->set("user_email",$result->email);
+                $req->session->set("user_role","owner");
+                return $res->render("/admin/owner","owner-dashboard");
+                
+            }
 
+            
         }
+
 
     }
+
+    // public function admin_login(Request $req, Response $res)
+    // {
+    //     $body = $req->body();
+    //     $owner = new owner($body);
+    //     $result = $owner->login();
+        
+    //     if (is_array($result)){
+    //         return $res->render("login","main");
+
+    //     }
+    //     if ($result){
+    //         $req->session->set("authenticated",true);
+    //         $req->session->set("user_email",$result->email);
+    //         $req->session->set("user_role","owner");
+    //         return $res->render("/admin/owner","owner-dashboard");
+
+
+
+    //     }
+
+    // }
 
     public function adminLogout(Request $req, Response $res){
         if ($req->session->get("authnticated") && $req->session->get("user_role")==="owner") {
