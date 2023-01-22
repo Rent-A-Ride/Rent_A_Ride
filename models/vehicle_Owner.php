@@ -8,7 +8,7 @@ use app\core\Database;
 
 
 
-class owner
+class vehicle_Owner
 {
     private \PDO $pdo;
     private array $body;
@@ -55,19 +55,19 @@ class owner
         
     // }
 
-    public function owner_login($user_id)
+    public function vehicle_Owner_login($user_id)
     {
-        $sql = "SELECT * FROM owner WHERE user_ID=:user_id";
+        $sql = "SELECT * FROM vehicleowner WHERE user_ID=:user_id";
         $statement = $this->pdo->prepare($sql);
         $statement->bindValue(':user_id',$user_id);
         $statement->execute();
-        $owner= $statement->fetchObject();
-        if(!$owner){
-            $errors['owner'] = 'Email does not have owner account';
+        $vehicleowner= $statement->fetchObject();
+        if(!$vehicleowner){
+            $errors['vehicleowner'] = 'Email does not have vehicle owner account';
         }
 
         if (empty($errors)){
-            return $owner;
+            return $vehicleowner;
         }
         else {
             return $errors;

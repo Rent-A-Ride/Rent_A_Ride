@@ -207,6 +207,10 @@ class vehicle
 
     }
 
+    public function vehicleOwnergetVehicle($NIC){
+        return $this->pdo->query("SELECT vehicle.model, vehicle.type, vehicle.fuel_type,vehicle.image, vehicle.price, vehicle.availability, vehicle.veh_transmition, vehicle_license.capacity, vehicle_license.owner FROM vehicle INNER JOIN vehicle_license ON vehicle.veh_Id=vehicle_license.vehicle_Id where vehicle.Owner_Nic=$NIC")->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
 
 
 }

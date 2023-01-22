@@ -21,7 +21,7 @@ $app->router->get("/", [AuthenticationController::class, "gethome"]);
 $app->router->get("/register", [AuthenticationController::class, "getCustomerSignupform"]);
 $app->router->post("/register", [AuthenticationController::class, "registerCustomer"]);
 $app->router->get("/login", [AuthenticationController::class, "login_form"]);
-$app->router->post("/login", [AuthenticationController::class, "admin_login"]);
+$app->router->post("/login", [AuthenticationController::class, "login"]);
 $app->router->get("/owner", [OwnerController::class, "ownerFirstPage"]);
 
 $app->router->get("/admin-vehicle", [OwnerController::class, "ownerVehicle"]);

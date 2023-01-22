@@ -60,6 +60,17 @@ class VehicleController
         }
         return $res->render("login","main");
     }
+    
+    public function vehicleownerGetVehicle(Request $req, Response $res){
+        if ($req->session->get("authenticated")&&$req->session->get("user_role")==="vehicleowner"){
+            $vehicleModel = new vehicle();
+            $vehicles = $vehicleModel->vehicleOwnergetVehicle(12345);
+//            print_r($vehicles);
+            return $vehicles;
+//            return $res->render(view: "admin-vehicle",layout: "owner-dashboard",pageParams: ["vehicles"=>$vehicles]);
+        }
+        return $res->render("login","main");
+    }
 
     public function viewVehicleProfile(Request $req, Response $res){
         if($req->session->get("authenticated") && $req->session->get("user_role") === "owner") {
