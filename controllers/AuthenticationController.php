@@ -6,6 +6,7 @@ use app\core\Request;
 use app\core\Response;
 use app\core\Session;
 use app\models\Customer;
+use app\models\driver;
 use app\models\owner;
 use app\models\user;
 use app\models\vehicle_Owner;
@@ -76,6 +77,22 @@ class AuthenticationController
                 $vehicle_owner=new vehicle_Owner($body);
                 $result2=$vehicle_owner->vehicle_Owner_login($user_id);
                 if (is_array($result2)) {
+                    $driver=new driver($body);
+                    $result3=$driver->driver_login($user_id);
+                    if (is_array($result3)) {
+                        // $req->session->set("authenticated",true);
+                        // $req->session->set("user_email",$result->email);
+                        // $req->session->set("user_role","customer");
+                        // return $res->render("/customer/customer","customer-dashboard");
+                
+                    }
+                    else {
+                        $req->session->set("authenticated",true);
+                        $req->session->set("user_email",$result->email);
+                        $req->session->set("user_role","driver");
+                        return $res->render("/driver/driver","driver-dashboard");
+                    
+                }
                 
                 }
                 else {
