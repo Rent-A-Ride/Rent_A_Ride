@@ -29,6 +29,7 @@ class Session
 
     public function destroy(): void
     {
+        
         session_destroy();
     }
 }

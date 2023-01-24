@@ -143,7 +143,7 @@ class AuthenticationController
     // }
 
     public function adminLogout(Request $req, Response $res){
-        if ($req->session->get("authnticated") && $req->session->get("user_role")==="owner") {
+        if ($req->session->get("authenticated") && $req->session->get("user_role") ==="owner") {
            $req->session->destroy();
             return $res->redirect(path: "/");
         }
