@@ -62,9 +62,11 @@ class VehicleController
     }
     
     public function vehicleownerGetVehicle(Request $req, Response $res){
+        
         if ($req->session->get("authenticated")&&$req->session->get("user_role")==="vehicleowner"){
             $vehicleModel = new vehicle();
-            $vehicles = $vehicleModel->vehicleOwnergetVehicle(12345);
+            $vehicles = $vehicleModel->vehicleOwnergetVehicle($req->session->get("user_id"));
+            
 //            print_r($vehicles);
             return $vehicles;
 //            return $res->render(view: "admin-vehicle",layout: "owner-dashboard",pageParams: ["vehicles"=>$vehicles]);

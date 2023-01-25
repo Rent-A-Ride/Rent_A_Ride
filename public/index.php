@@ -4,6 +4,7 @@ use app\core\Application;
 use app\controllers\AuthenticationController;
 use app\controllers\OwnerController;
 use app\controllers\VehicleController;
+use app\controllers\VehicleOwnerController;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -38,6 +39,11 @@ $app->router->post("/viewVehicleProfile", [VehicleController::class, "viewVehicl
 $app->router->get("/viewVehicleowner", [OwnerController::class, "ownerVehicleOwner"]);
 
 $app->router->get("/viewownerDriver", [OwnerController::class, "ownerDriver"]);
+
+
+$app->router->get("/vehicleowner_vehicle", [VehicleOwnerController::class, "VehicleOwnerVehicle"]);
+
+$app->router->get("/ownerProfile", [OwnerController::class, "ownerProfile"]);
 
 // run the application
 $app->run();

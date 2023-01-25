@@ -75,6 +75,10 @@ class owner
                 
 
     }
+
+    public function owner_profile($user_id){
+        return $this->pdo->query("SELECT * FROM owner where owner.user_ID=$user_id")->fetchAll(\PDO::FETCH_ASSOC);
+    }
     
 
 

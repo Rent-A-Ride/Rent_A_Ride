@@ -29,7 +29,7 @@
 
         </li>
         <li >
-            <a href="#">
+            <a href="/ownerProfile">
                 <img src="/assests/img/profile.png" class="pic">
                 <span>Profile</span>
             </a>
