@@ -4,13 +4,28 @@ namespace app\controllers;
 
 use app\core\Request;
 use app\core\Response;
+use app\models\owner;
 
 class OwnerController
 {
 
     public function ownerFirstPage(Request $req, Response $res){
+        if ($req->session->get("authenticated")&&$req->session->get("user_role")==="owner"){
+            return $res->render("/admin/owner","owner-dashboard");
+        }
+        return $res->render("Home","home");
+    }
 
-         return $res->render("/admin/owner","owner-dashboard");
+    public function ownerProfile(Request $req, Response $res){
+        if ($req->session->get("authenticated")&&$req->session->get("user_role")==="owner"){
+
+            $ownerprofile = new owner();
+            $ownerdetails  = $ownerprofile->owner_profile($req->session->get("user_id"));
+            
+            return $res->render("/admin/admin_profile","owner-dashboard",pageParams:['owner_details'=>$ownerdetails]);
+        }
+        return $res->render("Home","home");
+
     }
 
     public function ownerVehicle(Request $req, Response $res){
@@ -36,6 +51,9 @@ class OwnerController
                 // //        print_r($vehicle);
         return $res->render("/admin/admin_Driver","owner-dashboard");
     }
+
+
+    
 
 
 //    public function ownerLogout(){

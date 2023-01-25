@@ -87,6 +87,7 @@ class AuthenticationController
                 
                     }
                     else {
+                        $req->session->set("user_id",$result->user_ID);
                         $req->session->set("authenticated",true);
                         $req->session->set("user_email",$result->email);
                         $req->session->set("user_role","driver");
@@ -96,9 +97,10 @@ class AuthenticationController
                 
                 }
                 else {
+                    $req->session->set("user_id",$result->user_ID);
                     $req->session->set("authenticated",true);
                     $req->session->set("user_email",$result->email);
-                    $req->session->set("user_role","vehicle_Owner");
+                    $req->session->set("user_role","vehicleowner");
                     return $res->render("/VehicleOwner/vehicleowner","vehicleOwner-dashboard");
                     
                 }
@@ -107,6 +109,7 @@ class AuthenticationController
                 
             }
             else {
+                $req->session->set("user_id",$result->user_ID);
                 $req->session->set("authenticated",true);
                 $req->session->set("user_email",$result->email);
                 $req->session->set("user_role","owner");

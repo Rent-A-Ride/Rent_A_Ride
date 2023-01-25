@@ -5,6 +5,8 @@
 /* importing admin_Vehicleowner */
 @import "admin_Vehicleowner.css";
 
+@import "admin_profile.css";
+
 *{
     margin: 0;
     padding: 0;
