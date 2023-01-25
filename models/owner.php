@@ -77,7 +77,7 @@ class owner
     }
 
     public function owner_profile($user_id){
-        return $this->pdo->query("SELECT * FROM owner where owner.user_ID=$user_id")->fetchAll(\PDO::FETCH_ASSOC);
+        return $this->pdo->query("SELECT * FROM users INNER JOIN owner where owner.user_ID=$user_id AND users.user_ID=$user_id")->fetchAll(\PDO::FETCH_ASSOC);
     }
     
 

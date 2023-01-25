@@ -22,7 +22,7 @@ class OwnerController
             $ownerprofile = new owner();
             $ownerdetails  = $ownerprofile->owner_profile($req->session->get("user_id"));
             
-            return $res->render("/admin/admin_profile","owner-dashboard",['owner_details'=>$ownerdetails]);
+            return $res->render("/admin/admin_profile","owner-dashboard",pageParams:['owner_details'=>$ownerdetails]);
         }
         return $res->render("Home","home");
 

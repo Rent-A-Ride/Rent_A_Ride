@@ -6,7 +6,7 @@
 
     <div class="profile_content">
         <div class="profile_img">
-            <img src="my pic.jpeg" alt="" class="profile_img_img">
+            <img src="/assests/img/user_profile/<?php echo $owner_details[0]['profile_img']?>" alt="" class="profile_img_img">
         </div>
         <div class="profile_details">
             <div class="details_heading"> 
