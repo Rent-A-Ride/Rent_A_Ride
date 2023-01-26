@@ -79,6 +79,9 @@ class owner
     public function owner_profile($user_id){
         return $this->pdo->query("SELECT * FROM users INNER JOIN owner where owner.user_ID=$user_id AND users.user_ID=$user_id")->fetchAll(\PDO::FETCH_ASSOC);
     }
+    public function owner_img($user_id){
+        return $this->pdo->query("SELECT users.profile_img, owner.first_Name, owner.last_Name FROM users INNER JOIN owner WHERE users.user_ID=$user_id AND owner.user_ID=$user_id")->fetchAll(\PDO::FETCH_ASSOC);
+    }
     
 
 

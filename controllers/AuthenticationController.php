@@ -113,7 +113,9 @@ class AuthenticationController
                 $req->session->set("authenticated",true);
                 $req->session->set("user_email",$result->email);
                 $req->session->set("user_role","owner");
-                return $res->render("/admin/owner","owner-dashboard");
+                $ownerprofile = new owner();
+                $owner_img  = $ownerprofile->owner_img($req->session->get("user_id"));
+                return $res->render("/admin/owner","owner-dashboard",layoutParams:['profile_img'=>$owner_img]);
                 
             }
 
