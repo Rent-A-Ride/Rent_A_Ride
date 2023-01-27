@@ -75,7 +75,7 @@
 
                 </div>
 
-                <div class="form-input-addvehicleowner"><a href="" class="add-vehicleowner"><i class="fa-solid fa-plus"></i>ADD NEW</a></div>
+                <div class="form-input-addvehicleowner"><a href="/add-vehicle" class="add-vehicleowner"><i class="fa-solid fa-plus"></i>ADD NEW</a></div>
         
             </div>
 
@@ -107,9 +107,9 @@
                                     <div><img src="/assests/img/Vehicle_img/<?php echo $row['image']?>" alt="" class="vehicle-profile-image"></div>
                                     <div class="top-menu">
 
-                                        <button onclick="location.href='viewVehicleProfile'"><i class="fa-regular fa-eye"></i> View</button>
-                                        <button><i class="fa-regular fa-pen-to-square"></i>Update</button>
-                                        <button><i class="fa-solid fa-trash-can"></i>Delete</button>
+                                        <button class="button_adminvehicle" onclick="location.href='viewVehicleProfile'"><i class="fa-regular fa-eye"></i> View</button>
+                                        <button class="button_adminvehicle"><i class="fa-regular fa-pen-to-square"></i>Update</button>
+                                        <button class="button_adminvehicle"><i class="fa-solid fa-trash-can"></i>Delete</button>
                                     </div>
 
 

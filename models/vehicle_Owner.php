@@ -75,6 +75,11 @@ class vehicle_Owner
                 
 
     }
+
+    public function getVehicleowner(){
+        return $this->pdo->query("SELECT * FROM vehicleowner INNER JOIN users WHERE vehicleowner.user_ID=users.user_ID ")->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
     
 
 

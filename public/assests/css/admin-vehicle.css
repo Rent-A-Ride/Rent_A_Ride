@@ -57,17 +57,17 @@ i {
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
-button{
+.button_adminvehicle{
     background: linear-gradient(300deg,#FAB84C,goldenrod);
 
-    color: white;
-    padding-right: 20px;
+    color: black;
+    padding-right: 10px;
     border-radius: 1rem;
     cursor: pointer;
     margin-right:10px;
     font-weight: 600;
 }
-button:hover{
+.button_adminvehicle:hover{
     transform: scale(1.02);
 }
 

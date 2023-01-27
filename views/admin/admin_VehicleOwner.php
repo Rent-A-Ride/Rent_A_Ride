@@ -1,4 +1,5 @@
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 <div class="ownerVehicleowner_body">
 
 <div>
@@ -52,12 +53,52 @@
 
 
     <div>
-         <div class="Vehicleownerdetails">
-            <div>
+        <div class="Vehicleownerdetails_1">
+            <div class="adminvehicleOwner_img">
                 
             </div>
+            <div class="adminvehicleOwner_name_1">
+                <p>Name:</p>
+            </div>
+            <div class="adminvehicleOwner_location_1">
+                <p>Location:</p>
+            </div>
+            <div class="adminvehicleOwner_Novehicles_1">
+                <p>No.Of Vehicles:</p>
+            </div>
+            <div class="adminvehicleowner_btn">
+                
+            </div> 
+        </div>
+    <?php if ($vehicleowner){
+                foreach ($vehicleowner as $row){ ?>
+         <div class="Vehicleownerdetails">
+            <div class="adminvehicleOwner_img">
+                <img class="adminvehicleowner_img" src="/assests/img/user_profile/<?php echo $row['profile_img']?>" alt="" >
+            </div>
+            <div class="adminvehicleOwner_name">
+                <?php echo ($row["owner_Fname"]." ".$row["owner_Lname"]); ?>
+            </div>
+            <div class="adminvehicleOwner_location">
+                <?php echo ($row["owner_area"]); ?>
+            </div>
+            <div class="adminvehicleOwner_Novehicles">
+
+            </div>
+            <div class="adminvehicleowner_btn">
+                <div>
+                    <button class="admin_vehicleOwnerView"><i class="fa-regular fa-eye"></i>view</button>
+                </div>
+                <div>
+                    <button class="admin_vehicleOwnerView"><i class="fa-solid fa-trash-can"></i>Delete</button>
+                </div>
+                
+            </div> 
               
          </div>
+         <?php 
+            }
+        } ?>
     </div>
 
      

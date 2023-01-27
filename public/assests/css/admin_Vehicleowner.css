@@ -55,18 +55,125 @@ select{
 }
 .Vehicleownerdetails{
     background: #ffffff;
-    padding: 2rem;
-    border-radius: 0.5rem;
+    /* padding: 2rem; */
+    border-radius:  0.5rem;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 2rem;
     width: 90%;
     margin-left: 5%;
     margin-top: 20px;
+    display: flex;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+.Vehicleownerdetails_1{
+    background: lightgray;
+    border-radius: 0 0.5rem 0.5rem 0;
+    /* box-shadow: 0 10px 10px lightgray; */
+    
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.adminvehicleOwner_img{
+    /* background: red; */
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    
+    width: 15%;
+    text-align: center;
+}
+.adminvehicleowner_img{
+    width: 25%;
+    border-radius: 50%;
+}
+.admin_vehicleOwnerView{
+    background: linear-gradient(300deg,#FAB84C,goldenrod);
+
+    color: black;
+    padding-right: 10px;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-right:10px;
+    font-weight: 600;
+}
+
+.adminvehicleOwner_name{
+    /* background: red; */
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin-left: 2%;
+    width: 25%;
+    text-align: center;
+}
+.adminvehicleOwner_name_1{
+    background: whitesmoke;
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin-left: 2%;
+    width: 25%;
+    text-align: center;
+}
+.adminvehicleOwner_location{
+    /* background: red; */
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin-left: 2%;
+    width: 25%;
+    text-align: center;
+}
+.adminvehicleOwner_location_1{
+    background: whitesmoke;
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin-left: 2%;
+    width: 25%;
+    text-align: center;
+}
+.adminvehicleOwner_Novehicles{
+    /* background: red; */
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin-left: 2%;
+    width: 10%;
+    text-align: center;
+}
+.adminvehicleOwner_Novehicles_1{
+    background: whitesmoke;
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin-left: 2%;
+    width: 10%;
+    text-align: center;
+}
+
+.adminvehicleowner_btn{
+    /* background: red; */
+    /* padding: 2rem; */
+    border-radius: 0.5rem;
+    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    margin-left: 2%;
+    width: 20%;
+    display: flex;
+    text-align: center;
+}
+.admin_vehicleOwnerView{
+    text-align: center;
+    padding: 1px;
 }
 
 .Vehicleownerdetails:hover{
     transform: scale(1.02);
-    box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
 }
 
 .vehicleOwnerlocationselect{

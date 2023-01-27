@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\core\Request;
 use app\core\Response;
 use app\models\owner;
+use app\models\vehicle_Owner;
 
 class OwnerController
 {
@@ -49,7 +50,10 @@ class OwnerController
         if ($req->session->get("authenticated")&&$req->session->get("user_role")==="owner"){    
             $ownerprofile = new owner();
             $owner_img  = $ownerprofile->owner_img($req->session->get("user_id"));
-            return $res->render("/admin/admin_VehicleOwner","owner-dashboard",layoutParams:['profile_img'=>$owner_img]);
+            $vehicleowner = new vehicle_Owner();
+            $vehicleownerdetails = $vehicleowner->getVehicleowner();
+            
+            return $res->render("/admin/admin_VehicleOwner","owner-dashboard",pageParams:['vehicleowner'=>$vehicleownerdetails], layoutParams:['profile_img'=>$owner_img]);
         }
         return $res->render("Home","home");
     }
