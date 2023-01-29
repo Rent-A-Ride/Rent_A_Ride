@@ -61,8 +61,10 @@ class OwnerController
     public function ownerDriver(Request $req, Response $res){
         if ($req->session->get("authenticated")&&$req->session->get("user_role")==="owner"){
             $ownerprofile = new owner();
-            $owner_img  = $ownerprofile->owner_img($req->session->get("user_id"));      
-            return $res->render("/admin/admin_Driver","owner-dashboard",layoutParams:['profile_img'=>$owner_img]);
+            $owner_img  = $ownerprofile->owner_img($req->session->get("user_id"));
+            $vehicleowner = new vehicle_Owner();
+            $vehicleownerdetails = $vehicleowner->getVehicleowner();      
+            return $res->render("/admin/admin_Driver","owner-dashboard",pageParams:['vehicleowner'=>$vehicleownerdetails],layoutParams:['profile_img'=>$owner_img]);
         }
         return $res->render("Home","home");
     }
