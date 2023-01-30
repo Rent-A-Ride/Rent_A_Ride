@@ -70,17 +70,17 @@
                 
             </div> 
         </div>
-    <?php if ($vehicleowner){
-                foreach ($vehicleowner as $row){ ?>
+    <?php if ($driver){
+                foreach ($driver as $row){ ?>
          <div class="Driverdetails">
             <div class="admindriver_img">
                 <img class="adminDriver_img" src="/assests/img/user_profile/<?php echo $row['profile_img']?>" alt="" >
             </div>
             <div class="admindriver_name">
-                <?php echo ($row["owner_Fname"]." ".$row["owner_Lname"]); ?>
+                <?php echo ($row["driver_Fname"]." ".$row["driver_Lname"]); ?>
             </div>
             <div class="admindriver_location">
-                <?php echo ($row["owner_area"]); ?>
+                <?php echo ($row["driver_area"]); ?>
             </div>
             <div class="admindriver_Novehicles">
 
