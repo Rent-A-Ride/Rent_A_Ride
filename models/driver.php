@@ -75,6 +75,11 @@ class driver
                 
 
     }
+
+    public function getDriver(){
+        return $this->pdo->query("SELECT * FROM driver INNER JOIN users WHERE driver.user_ID=users.user_ID ")->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
     
 
 

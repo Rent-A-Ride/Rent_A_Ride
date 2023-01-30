@@ -8,7 +8,8 @@
 
 
 <div class="navbar">
-    Rent-A-Ride
+    <div class="logo"><img src="/assests/img/logo.png" alt="" class="logo-image"></div>
+    <div class="vision"><strong >Mobility Without Hassle</strong></div>
 </div>
 <section>
     <div class="img-bx">
@@ -31,14 +32,15 @@
                     <span class="login_errormessage"> <?php echo $isPasswordlError? "<small>{$errors['password']}</small>" : ""?></span>
                 </div>
                 <div class="forgot">
-                    <h5>Forgot your password?? <a href="#">Reset password</a></h5>
+                    <h5>Forgot your password?? <a href="#" style="color: red;">Reset password</a></h5>
                 </div>
                 <div class="input-bx">
 
                     <input type="submit" value="Login">
                 </div>
+                
                 <div class="signup">
-                    <h5>Haven't Sign Up yet <a href="/register">Sign Up</a></h5>
+                    <h5>Haven't Sign Up yet?? <a href="/register" style="color: blue;">Sign Up</a> </h5> 
                 </div>
             </form>
         </div>

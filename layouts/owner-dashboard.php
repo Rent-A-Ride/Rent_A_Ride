@@ -110,12 +110,13 @@
                 <img src="/assests/img/notification.png" alt="" class="pic3">
                 <span class="num">8</span>
             </a>
-
+            
             <a href="#">
-                <img src="/assests/img/my pic.jpeg" alt="" class="profile">
+                 
+                <img src="/assests/img/user_profile/<?php echo ($profile_img[0]['profile_img'])?>" alt="" class="profile">
 
             </a>
-            <p class="name">Mr.Kalana Weranga</p>
+            <p class="name"><?php echo($profile_img[0]['first_Name']." ".$profile_img[0]['last_Name']) ?></p>
 
 
         </nav>
