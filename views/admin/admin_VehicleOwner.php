@@ -86,8 +86,9 @@
 
             </div>
             <div class="adminvehicleowner_btn">
+                <?php $user_id=$row["user_ID"];   ?>
                 <div>
-                    <button class="admin_vehicleOwnerView"><i class="fa-regular fa-eye"></i>view</button>
+                    <button class="admin_vehicleOwnerView" onclick="location.href='/adminViewVehicleOwner?id=<?php echo $user_id; ?>'" ><i class="fa-regular fa-eye"></i>view</button>
                 </div>
                 <div>
                     <button class="admin_vehicleOwnerView"><i class="fa-solid fa-trash-can"></i>Delete</button>

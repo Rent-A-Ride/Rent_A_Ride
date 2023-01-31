@@ -203,12 +203,18 @@ class vehicle
 
 
     public function getVehicle(){
-        return $this->pdo->query("SELECT vehicle.model, vehicle.type, vehicle.fuel_type,vehicle.image, vehicle.price, vehicle.availability, vehicle.veh_transmition, vehicle_license.capacity, vehicle_license.owner FROM vehicle INNER JOIN vehicle_license ON vehicle.veh_Id=vehicle_license.vehicle_Id")->fetchAll(\PDO::FETCH_ASSOC);
+        return $this->pdo->query("SELECT vehicle.veh_Id, vehicle.model, vehicle.type, vehicle.fuel_type,vehicle.image, vehicle.price, vehicle.availability, vehicle.veh_transmition, vehicle_license.capacity, vehicle_license.owner FROM vehicle INNER JOIN vehicle_license ON vehicle.veh_Id=vehicle_license.vehicle_Id ORDER BY vehicle.veh_Id DESC")->fetchAll(\PDO::FETCH_ASSOC);
 
     }
 
     public function vehicleOwnergetVehicle($user_id){
         return $this->pdo->query("SELECT vehicle.model, vehicle.type, vehicle.fuel_type,vehicle.image, vehicle.price, vehicle.availability, vehicle.veh_transmition, vehicle_license.capacity, vehicle_license.owner FROM vehicle INNER JOIN vehicle_license ON vehicle.veh_Id=vehicle_license.vehicle_Id where vehicle.user_ID=$user_id")->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getVehiclebyId($vehicle_id){
+        
+        return $this->pdo->query("SELECT * FROM vehicle INNER JOIN vehicle_license ON vehicle.veh_Id=$vehicle_id AND vehicle.veh_Id=vehicle_license.vehicle_Id")->fetchAll(\PDO::FETCH_ASSOC);
+
     }
 
 

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\core\Request;
 use app\core\Response;
+use app\models\vehicle_Owner;
 
 class VehicleOwnerController
 {
@@ -21,6 +22,17 @@ class VehicleOwnerController
 //        print_r($vehicle);
          return $res->render("/VehicleOwner/vehicleOwner_vehicle","vehicleOwner-dashboard",['result'=>$vehicle]);
     }
+
+    public function viewVehicleownerProfile(Request $req, Response $res,){
+            
+        $query=$req->query(); 
+        $vehicleownerModel=new vehicle_Owner() ;
+        $vehiclesowner=$vehicleownerModel->Vehicleowner_profile((int)$query["id"]);
+
+        return $vehiclesowner;
+
+
+}
 
     
 

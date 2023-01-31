@@ -74,13 +74,12 @@ class VehicleController
         return $res->render("login","main");
     }
 
-    public function viewVehicleProfile(Request $req, Response $res){
-        if($req->session->get("authenticated") && $req->session->get("user_role") === "owner") {
-
-            return $res->render("/admin/ownerViewVehicleProfile","owner-dashboard");
-        }
-
-        return $res->render("login","main");
+    public function viewVehicleProfile(Request $req, Response $res,){
+            
+            $query=$req->query(); 
+            $vehicleModel=new vehicle();
+            $vehicles=$vehicleModel->getVehiclebyId((int)$query["id"]);
+            return $vehicles;
 
 
     }

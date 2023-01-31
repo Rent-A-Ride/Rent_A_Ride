@@ -28,7 +28,7 @@
                     <div class="ownervehicleownerdsearchform1">
                         <form action="" method="">
                             <!-- <input type="search" class="VehicleownerSearch"> -->
-                            <select class="VehicleownerSearch">
+                            <select class="VehicleownerSearch" id="veh_type">
                                 <option value="All">All</option>
                                 <option value="Scooter">Scooter</option>
                                 <option value="Motorcycle">Motor Cycle</option>
@@ -41,7 +41,8 @@
 
                 <div class="ownervehicleownerdsearchform1">
                     <form>
-                        <select >
+                        <select id="distrct">
+                            <option value="All">All</option>
                             <option value="Ampara">Ampara</option>
                             <option value="Anuradhapura">Anuradhapura</option>
                             <option value="Badulla">Badulla</option>
@@ -91,6 +92,7 @@
         <div class="project-container">
 
             <?php
+              
 
                if ($result){
                    foreach ($result as $row){
@@ -106,8 +108,9 @@
 
                                     <div><img src="/assests/img/Vehicle_img/<?php echo $row['image']?>" alt="" class="vehicle-profile-image"></div>
                                     <div class="top-menu">
-
-                                        <button class="button_adminvehicle" onclick="location.href='viewVehicleProfile'"><i class="fa-regular fa-eye"></i> View</button>
+                                        <?php $vehicle_id=$row["veh_Id"] ?>; 
+                                        
+                                        <button class="button_adminvehicle" onclick="location.href='/viewVehicleProfile?id=<?php echo $vehicle_id; ?>'"><i class="fa-regular fa-eye"></i> View</button>
                                         <button class="button_adminvehicle"><i class="fa-regular fa-pen-to-square"></i>Update</button>
                                         <button class="button_adminvehicle"><i class="fa-solid fa-trash-can"></i>Delete</button>
                                     </div>
