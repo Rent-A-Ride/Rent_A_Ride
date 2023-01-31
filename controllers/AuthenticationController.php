@@ -63,7 +63,7 @@ class AuthenticationController
         // die();
 
         if (is_array($result)){
-            return $res->render("login","main",pageParams:['errors' => $result]);
+            return $res->render("login","main",['errors' => $result]);
 
         }
         else {
@@ -115,7 +115,7 @@ class AuthenticationController
                 $req->session->set("user_role","owner");
                 $ownerprofile = new owner();
                 $owner_img  = $ownerprofile->owner_img($req->session->get("user_id"));
-                return $res->render("/admin/owner","owner-dashboard",layoutParams:['profile_img'=>$owner_img]);
+                return $res->render("/admin/owner","owner-dashboard",['profile_img'=>$owner_img]);
                 
             }
 
@@ -150,9 +150,9 @@ class AuthenticationController
     public function adminLogout(Request $req, Response $res){
         if ($req->session->get("authenticated") && $req->session->get("user_role") ==="owner") {
            $req->session->destroy();
-            return $res->redirect(path: "/");
+            return $res->redirect("/");
         }
-        return $res->redirect(path: "/");
+        return $res->redirect( "/");
     }
 
 

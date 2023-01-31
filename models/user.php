@@ -21,7 +21,7 @@ class user
 
     }
 
-    public function login():array|object
+    public function login()
     {
         $errors = [];
         $user = null;

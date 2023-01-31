@@ -2,61 +2,52 @@
 
 namespace app\core;
 
-/**
- * @package app\core
- */
-class Request
+class Request extends Controller
 {
-
-    public Session $session;
-
-
-    public function __construct()
+    public function getPath()
     {
-        $this->session = new Session();
-    }
-
-
-    /**
-     * Get the path of current request without any url parameters.
-     * @return string
-     */
-    public function path(): string
-    {
-        $path = $_SERVER['REQUEST_URI'] ?? "/";
-        $position = strpos($path, "?");
+        $path = $_SERVER['REQUEST_URI'] ?? '/';
+        $position = strpos($path, '?');
         if ($position === false) {
             return $path;
         }
+
         return substr($path, 0, $position);
+
     }
 
-    /**
-     * Get the method of the current request
-     * @return string
-     */
     public function method(): string
     {
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
 
-
-    public function query(): array
+    public function isGet(): string
     {
-        $query = [];
-        foreach ($_GET as $key => $value) {
-            $query[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
-        }
-        return $query;
+        return $this->method() === 'get';
     }
 
-    public function body(): array
+    public function isPost(): string
+    {
+        return $this->method() === 'post';
+    }
+
+    public function getBody()
     {
         $body = [];
-        foreach ($_POST as $key => $value) {
-            $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+        if ($this->method() === 'get'){
+            foreach ($_GET as $key => $value) {
+                $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
         }
+
+        if ($this->method() === 'post'){
+            foreach  ($_POST as $key => $value) {
+                $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+
+
+
         return $body;
     }
-
 }

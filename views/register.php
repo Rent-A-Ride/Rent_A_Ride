@@ -1,16 +1,70 @@
-<div class="reg_body">
-    <div class="navbar">
-        <div class="logo"><img src="/assests/img/logo.png" alt="" class="logo-image"></div>
-        <div class="vision"><strong >Mobility Without Hassle</strong></div>
-    </div>
-    <div class="reg-userTypes">
-        <div class="selectUsertype">
-            <div class="reg_vehicleOwner"><a href="" class="vowner_reg">Vehicle Owner<img src="/assests/img/v_owner.jpg" alt="" class="vowner_reg"></a></div>
 
-            <div class="reg_driver"><a href="" class="driver_reg">Driver<img src="/assests/img/driver.jpg" alt="" class="driver_reg"></a></div>
 
-            <div class="reg_customer"><a href="" class="customer_reg">Customer<img src="/assests/img/customer_reg.jfif" alt="" class="customer_reg"></a></div>
+<h1>Register</h1>
+
+<div class="wrapper">
+    <div class="registration_form">
+        <!-- Title-->
+        <div class="title">
+            Create an account
         </div>
+<!--        Form-->
+        <form action="" method="post">
+            <div class="form_wrap">
+                <div class="input_grp">
+<!--                    <!–- Frist name input Place -–>-->
+                    <div class="input_wrap">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname">
+                    </div>
+<!--                    <!– Last Name input place –>-->
+                    <div class="input_wrap">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname">
+                    </div>
+                </div>
+<!--                Email Id input Place-->
+                <div class="input_wrap">
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" name="email">
+                </div>
 
+                <!--                Phone no input Place-->
+                <div class="input_wrap">
+                    <label for="phoneno">Phone no</label>
+                    <input type="text" id="phoneno" name="phoneno">
+                </div>
+
+                <!-- Gender -->
+                <div class="input_wrap">
+                    <label id="gender">gender</label>
+                    <select id="dropdown" name="gender" required>
+                        <option disabled selected value>
+                            Select your gender
+                        </option>
+                        <option value="female">
+                            Female
+                        </option>
+                        <option value="male">
+                            Male
+                        </option>
+                    </select>
+                </div>
+
+                <div class="input_wrap">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="input_wrap">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="passwordConfirm" name="passwordConfirm">
+                </div>
+                <!– Submit button –>
+                <div class="input_wrap">
+                    <input type="submit" value= "Register Now" class="submit_btn">
+                </div>
+            </div>
+        </form>
     </div>
 </div>
