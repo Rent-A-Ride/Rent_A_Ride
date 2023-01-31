@@ -14,10 +14,10 @@
         <div class="ownervehicleownerdsearchform1">
             <form>
                 <select >
-                    <option value="Ampara">Ampara</option>
-                    <option value="Anuradhapura">Anuradhapura</option>
-                    <option value="Badulla">Badulla</option>
-                    <option value="Batticaloa">Batticaloa</option>
+                    <option value="all">All</option>
+                    <option value="foreign">Foreign</option>
+                    <option value="local">Local</option>
+                    <!-- <option value="Batticaloa">Batticaloa</option>
                     <option value="Colombo">Colombo</option>
                     <option value="Galle">Galle</option>
                     <option value="Gampaha">Gampaha</option>
@@ -38,7 +38,7 @@
                     <option value="Puttalama">Puttalama</option>
                     <option value="Ratnapura">Ratnapura</option>
                     <option value="Trincomalee">Trincomalee</option>
-                    <option value="Vavuniya" >Vavuniya</option>
+                    <option value="Vavuniya" >Vavuniya</option> -->
                 </select>
                 <input type="submit" class="VehicleownerSearchbtn VehicleownerSearchbtn2" value="Location">
 
@@ -47,51 +47,50 @@
 
         </div>
 
-        <div class="form-input-addvehicleowner"><a href="" class="add-vehicleowner"><i class="fa-solid fa-plus"></i>ADD NEW</a></div>
+        <!-- <div class="form-input-addvehicleowner"><a href="" class="add-vehicleowner"><i class="fa-solid fa-plus"></i>ADD NEW</a></div> -->
         
      </div>
 
 
     <div>
-        <div class="Vehicleownerdetails_1">
-            <div class="adminvehicleOwner_img">
+        <div class="Driverdetails_1">
+            <div class="admindriver_img">
                 
             </div>
-            <div class="adminvehicleOwner_name_1">
+            <div class="admindriver_name_1">
                 <p>Name:</p>
             </div>
-            <div class="adminvehicleOwner_location_1">
-                <p>Location:</p>
+            <div class="admindriver_location_1">
+                <p>Email:</p>
             </div>
             <div class="adminvehicleOwner_Novehicles_1">
-                <p>No.Of Vehicles:</p>
+                <p>Customer Type:</p>
             </div>
-            <div class="adminvehicleowner_btn">
+            <div class="admindriver_btn">
                 
             </div> 
         </div>
-    <?php if ($vehicleowner){
-                foreach ($vehicleowner as $row){ ?>
-         <div class="Vehicleownerdetails">
-            <div class="adminvehicleOwner_img">
-                <img class="adminvehicleowner_img" src="/assests/img/user_profile/<?php echo $row['profile_img']?>" alt="" >
+    <?php if ($customer){
+                foreach ($customer as $row){ ?>
+         <div class="Driverdetails">
+            <div class="admindriver_img">
+                <img class="adminDriver_img" src="/assests/img/user_profile/<?php echo $row['profile_img']?>" alt="" >
             </div>
-            <div class="adminvehicleOwner_name">
-                <?php echo ($row["owner_Fname"]." ".$row["owner_Lname"]); ?>
+            <div class="admindriver_name">
+                <?php echo ($row["cus_Fname"]." ".$row["cus_Lname"]); ?>
             </div>
-            <div class="adminvehicleOwner_location">
-                <?php echo ($row["owner_area"]); ?>
+            <div class="admindriver_location">
+                <?php echo ($row["cus_email"]); ?>
             </div>
-            <div class="adminvehicleOwner_Novehicles">
-
+            <div class="admindriver_Novehicles">
+                <?php echo ($row["cus_Type"]); ?>
             </div>
-            <div class="adminvehicleowner_btn">
-                <?php $user_id=$row["user_ID"];   ?>
+            <div class="admindriver_btn">
                 <div>
-                    <button class="admin_vehicleOwnerView" onclick="location.href='/adminViewVehicleOwner?id=<?php echo $user_id; ?>'" ><i class="fa-regular fa-eye"></i>view</button>
+                    <button class="admin_driverView"><i class="fa-regular fa-eye"></i>view</button>
                 </div>
                 <div>
-                    <button class="admin_vehicleOwnerView"><i class="fa-solid fa-trash-can"></i>Delete</button>
+                    <button class="admin_driverView"><i class="fa-solid fa-trash-can"></i>Delete</button>
                 </div>
                 
             </div> 

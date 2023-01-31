@@ -9,6 +9,8 @@
 
 @import "admin_profile.css";
 
+@import "adminViewVehicleOwner.css";
+
 *{
     margin: 0;
     padding: 0;

@@ -33,8 +33,8 @@ $app->router->post("/logout", [AuthenticationController::class, "adminLogout"]);
 $app->router->get("/add-vehicle", [VehicleController::class, "add_VehiclePage"]);
 $app->router->post("/add-vehicle", [VehicleController::class, "owneraddVehicle"]);
 
-$app->router->get("/viewVehicleProfile", [VehicleController::class, "viewVehicleProfile"]);
-$app->router->post("/viewVehicleProfile", [VehicleController::class, "viewVehicleProfile"]);
+$app->router->get("/viewVehicleProfile", [OwnerController::class, "ownerVehicleProfile"]);
+$app->router->post("/viewVehicleProfile", [OwnerController::class, "ownerVehicleProfile"]);
 
 $app->router->get("/viewVehicleowner", [OwnerController::class, "ownerVehicleOwner"]);
 
@@ -44,6 +44,10 @@ $app->router->get("/viewownerDriver", [OwnerController::class, "ownerDriver"]);
 $app->router->get("/vehicleowner_vehicle", [VehicleOwnerController::class, "VehicleOwnerVehicle"]);
 
 $app->router->get("/ownerProfile", [OwnerController::class, "ownerProfile"]);
+
+$app->router->get("/adminViewVehicleOwner", [OwnerController::class, "ViewVehicleOwnerProfile"]);
+
+$app->router->get("/admin_customer", [OwnerController::class, "admin_Customer"]);
 
 // run the application
 $app->run();

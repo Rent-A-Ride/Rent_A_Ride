@@ -8,7 +8,7 @@ use app\core\Database;
 
 
 
-class vehicle_Owner
+class customer
 {
     private \PDO $pdo;
     private array $body;
@@ -55,36 +55,32 @@ class vehicle_Owner
         
     // }
 
-    public function vehicle_Owner_login($user_id)
+    public function driver_login($user_id)
     {
-        $sql = "SELECT * FROM vehicleowner WHERE user_ID=:user_id";
+        $sql = "SELECT * FROM customer WHERE user_ID=:user_id";
         $statement = $this->pdo->prepare($sql);
         $statement->bindValue(':user_id',$user_id);
         $statement->execute();
-        $vehicleowner= $statement->fetchObject();
-        if(!$vehicleowner){
-            $errors['vehicleowner'] = 'Email does not have vehicle owner account';
+        $customer= $statement->fetchObject();
+        if(!$customer){
+            $errors['customer'] = 'Email does not have owner account';
         }
 
         if (empty($errors)){
-            return $vehicleowner;
+            return $customer;
         }
         else {
             return $errors;
         }
+    }
+
+    public function getcustomer(){
+        
+        return $this->pdo->query("SELECT * FROM customer INNER JOIN users ON customer.user_ID=users.user_ID INNER JOIN customerdoc ON customer.custmer_ID=customerdoc.customer_ID")->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
                 
 
-    }
-
-    public function getVehicleowner(){
-        return $this->pdo->query("SELECT * FROM vehicleowner INNER JOIN users WHERE vehicleowner.user_ID=users.user_ID ")->fetchAll(\PDO::FETCH_ASSOC);
-
-    }
-
-    public function Vehicleowner_profile($user_id){
-    
-        return $this->pdo->query("SELECT * FROM users INNER JOIN vehicleowner where vehicleowner.user_ID=$user_id AND users.user_ID=$user_id")->fetchAll(\PDO::FETCH_ASSOC);
-    }
     
 
 

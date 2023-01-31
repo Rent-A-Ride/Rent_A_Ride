@@ -43,7 +43,7 @@
 
         </li>
         <li>
-            <a href="#">
+            <a href="admin_customer">
 
                 <img src="/assests/img/customer.png" class="pic">
                 <span>Customer</span>

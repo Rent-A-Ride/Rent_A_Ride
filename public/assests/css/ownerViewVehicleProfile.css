@@ -66,9 +66,11 @@ body{
 
 .vehicleProfileDesc .vehicleProfileDesc_details{
     margin-top: 10px;
+    display: flex;
 }
 .VehicleProfilelicenseInsuerance .vehicleProfileDesc_details{
     margin-top: 10px;
+    display: flex;
 }
 /* .vehicleProfileVehicleName .owner:hover{
     color: #FAB84C;
