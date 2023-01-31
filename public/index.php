@@ -47,6 +47,8 @@ $app->router->get("/ownerProfile", [OwnerController::class, "ownerProfile"]);
 
 $app->router->get("/adminViewVehicleOwner", [OwnerController::class, "ViewVehicleOwnerProfile"]);
 
+$app->router->get("/admin_customer", [OwnerController::class, "admin_Customer"]);
+
 // run the application
 $app->run();
 
